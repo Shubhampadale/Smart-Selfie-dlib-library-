@@ -1,15 +1,9 @@
+
 from flask import Flask, render_template, Response
 from camera import VideoCamera
 #from haar import VideoCamera1
-#from trial import trial_frame
-
- 
 
 app = Flask(__name__)
-
-
-    
-
 
 @app.route('/')
 def index():
@@ -23,18 +17,12 @@ def gen(camera):
 
 @app.route('/video_feed')
 def video_feed():
-   return Response(gen(VideoCamera()),
-                   mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen(VideoCamera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
-#@app.route('/match')
-#def abcd():
-#    trial_frame()
-#    return 'hello'
-
-#@app.route('/haar')
-#def efgh():
- #   return frame
-
+#@app.route('/video')
+#def video():
+#  return render_template('index1.html')
 
 #def gen(haar):
 #   while True:
